@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/ShopKeepers_House.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Sprites/Hearts/Full_Heart.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/Leg Fong.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Fonts/Money.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Hearts/Empty_Heart.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Hearts/Half_Heart.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1169,13 +1171,35 @@ text = "##"
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="HealthOrbs" type="TextureRect" parent="HUD/Life"]
-margin_left = -7.0
-margin_top = -5.0
-margin_right = 119.0
-margin_bottom = 64.0
+[node name="HealthEmpty" type="TextureRect" parent="HUD/Life"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 24.0
+margin_bottom = 23.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="HealthHalf" type="TextureRect" parent="HUD/Life"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 24.0
+margin_bottom = 23.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+
+[node name="HealthFull" type="TextureRect" parent="HUD/Life"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 24.0
+margin_bottom = 23.0
+rect_scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 5 )
-stretch_mode = 5
+expand = true
+stretch_mode = 2
 
 [connection signal="player_enter" from="ToTown" to="Player" method="_on_ShopKeepersHouse_player_enter"]
 [connection signal="player_exit" from="ToTown" to="Player" method="_on_ShopKeepersHouse_player_enter"]

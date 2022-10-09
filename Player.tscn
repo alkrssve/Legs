@@ -4,10 +4,11 @@
 [ext_resource path="res://PlayerBody.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 3.125 )
+extents = Vector2( 8, 3.5 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 8.0
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 6.0
+height = 4.0
 
 [sub_resource type="CapsuleShape2D" id=11]
 radius = 6.0
@@ -137,12 +138,13 @@ script = ExtResource( 3 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -2.875 )
+position = Vector2( 0, -2.5 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -7 )
-shape = SubResource( 2 )
+position = Vector2( 0, -6 )
+rotation = 1.5708
+shape = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -6 )
@@ -175,8 +177,13 @@ zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 smoothing_speed = 10.0
 
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

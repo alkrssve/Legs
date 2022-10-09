@@ -36,3 +36,7 @@ func _physics_process(delta):
 			position.y -= speed_modifier
 		else: 
 			position.x -= speed_modifier
+
+
+func _on_DamageCheck_body_entered(body):
+	body.damage(position.x)
