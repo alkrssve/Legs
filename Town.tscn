@@ -1,16 +1,24 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Grass_Tiles.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Background_Sky.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Leg Fong.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Sprites/Town_Tiles.png" type="Texture" id=4]
 [ext_resource path="res://SaveStatue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/Flag_Anim.png" type="Texture" id=6]
 [ext_resource path="res://Flag.gd" type="Script" id=7]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Fonts/Money.png" type="Texture" id=9]
+[ext_resource path="res://Shop.tscn" type="PackedScene" id=10]
 [ext_resource path="res://HUD.gd" type="Script" id=11]
 [ext_resource path="res://Entrance.tscn" type="PackedScene" id=12]
+[ext_resource path="res://SpikeEnemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Clouds.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Sprites/Hearts/Full_Heart.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFont" id=50]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -113,6 +121,15 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=45]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 16.3948, 0, 16.86 )
+
+[sub_resource type="ConvexPolygonShape2D" id=52]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 16.8263, 0, 16.8263 )
+
+[sub_resource type="ConvexPolygonShape2D" id=53]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 16.8263, 0, 16.8263 )
+
+[sub_resource type="ConvexPolygonShape2D" id=54]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1212,6 +1229,125 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 54/shape_one_way_margin = 0.0
 54/shapes = [  ]
 54/z_index = 0
+55/name = "Town_Tiles.png 55"
+55/texture = ExtResource( 4 )
+55/tex_offset = Vector2( 0, 0 )
+55/modulate = Color( 1, 1, 1, 1 )
+55/region = Rect2( 192, 448, 32, 32 )
+55/tile_mode = 0
+55/occluder_offset = Vector2( 0, 0 )
+55/navigation_offset = Vector2( 0, 0 )
+55/shape_offset = Vector2( 0, 0 )
+55/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+55/shape = SubResource( 52 )
+55/shape_one_way = false
+55/shape_one_way_margin = 1.0
+55/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 52 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+55/z_index = 0
+56/name = "Town_Tiles.png 56"
+56/texture = ExtResource( 4 )
+56/tex_offset = Vector2( 0, 0 )
+56/modulate = Color( 1, 1, 1, 1 )
+56/region = Rect2( 224, 448, 32, 32 )
+56/tile_mode = 0
+56/occluder_offset = Vector2( 0, 0 )
+56/navigation_offset = Vector2( 0, 0 )
+56/shape_offset = Vector2( 0, 0 )
+56/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+56/shape = SubResource( 53 )
+56/shape_one_way = false
+56/shape_one_way_margin = 1.0
+56/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 53 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+56/z_index = 0
+57/name = "Town_Tiles.png 57"
+57/texture = ExtResource( 4 )
+57/tex_offset = Vector2( 0, 0 )
+57/modulate = Color( 1, 1, 1, 1 )
+57/region = Rect2( 384, 448, 32, 32 )
+57/tile_mode = 0
+57/occluder_offset = Vector2( 0, 0 )
+57/navigation_offset = Vector2( 0, 0 )
+57/shape_offset = Vector2( 0, 0 )
+57/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+57/shape = SubResource( 54 )
+57/shape_one_way = false
+57/shape_one_way_margin = 1.0
+57/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 54 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+57/z_index = 0
+58/name = "Town_Tiles.png 58"
+58/texture = ExtResource( 4 )
+58/tex_offset = Vector2( 0, 0 )
+58/modulate = Color( 1, 1, 1, 1 )
+58/region = Rect2( 320, 288, 32, 32 )
+58/tile_mode = 0
+58/occluder_offset = Vector2( 0, 0 )
+58/navigation_offset = Vector2( 0, 0 )
+58/shape_offset = Vector2( 0, 0 )
+58/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+58/shape_one_way = false
+58/shape_one_way_margin = 0.0
+58/shapes = [  ]
+58/z_index = 0
+59/name = "Town_Tiles.png 59"
+59/texture = ExtResource( 4 )
+59/tex_offset = Vector2( 0, 0 )
+59/modulate = Color( 1, 1, 1, 1 )
+59/region = Rect2( 160, 320, 96, 96 )
+59/tile_mode = 2
+59/autotile/icon_coordinate = Vector2( 0, 0 )
+59/autotile/tile_size = Vector2( 32, 32 )
+59/autotile/spacing = 0
+59/autotile/occluder_map = [  ]
+59/autotile/navpoly_map = [  ]
+59/autotile/priority_map = [  ]
+59/autotile/z_index_map = [  ]
+59/occluder_offset = Vector2( 0, 0 )
+59/navigation_offset = Vector2( 0, 0 )
+59/shape_offset = Vector2( 0, 0 )
+59/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+59/shape_one_way = false
+59/shape_one_way_margin = 0.0
+59/shapes = [  ]
+59/z_index = 0
+60/name = "Town_Tiles.png 60"
+60/texture = ExtResource( 4 )
+60/tex_offset = Vector2( 0, 0 )
+60/modulate = Color( 1, 1, 1, 1 )
+60/region = Rect2( 192, 416, 64, 32 )
+60/tile_mode = 2
+60/autotile/icon_coordinate = Vector2( 0, 0 )
+60/autotile/tile_size = Vector2( 32, 32 )
+60/autotile/spacing = 0
+60/autotile/occluder_map = [  ]
+60/autotile/navpoly_map = [  ]
+60/autotile/priority_map = [  ]
+60/autotile/z_index_map = [  ]
+60/occluder_offset = Vector2( 0, 0 )
+60/navigation_offset = Vector2( 0, 0 )
+60/shape_offset = Vector2( 0, 0 )
+60/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+60/shape_one_way = false
+60/shape_one_way_margin = 0.0
+60/shapes = [  ]
+60/z_index = 0
 
 [sub_resource type="Animation" id=46]
 resource_name = "Flag_Waving"
@@ -1245,42 +1381,89 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 32, 32 ) ]
 }
 
-[sub_resource type="DynamicFont" id=49]
-size = 32
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=50]
-size = 32
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 9 )
-
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 297.2, 10 )
 
+[sub_resource type="Gradient" id=55]
+offsets = PoolRealArray( 0, 0.388535, 0.509554, 0.694268, 0.933121 )
+colors = PoolColorArray( 0.75, 0.75, 0.75, 1, 0.861475, 0.861475, 0.861475, 0.505434, 0.872164, 0.872164, 0.872164, 0.45801, 0.916449, 0.916449, 0.916449, 0.261539, 0.952941, 0.952941, 0.952941, 0 )
+
+[sub_resource type="GradientTexture" id=56]
+gradient = SubResource( 55 )
+
+[sub_resource type="ParticlesMaterial" id=57]
+lifetime_randomness = 0.1
+emission_shape = 1
+emission_sphere_radius = 3.85
+flag_disable_z = true
+direction = Vector3( 0, 50, 0 )
+spread = 158.75
+flatness = 1.0
+gravity = Vector3( 0, -60, 0 )
+orbit_velocity = -0.25
+orbit_velocity_random = 0.0
+angle = -5.6
+scale = 10.0
+scale_random = 0.49
+color = Color( 0.580392, 0.580392, 0.580392, 1 )
+color_ramp = SubResource( 56 )
+
+[sub_resource type="ViewportTexture" id=58]
+viewport_path = NodePath("Viewport")
+
 [node name="Town" type="Node2D"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 11 )
+
+[node name="$" type="TextureRect" parent="HUD"]
+margin_left = 12.0
+margin_top = 47.0
+margin_right = 46.0
+margin_bottom = 83.0
+texture = ExtResource( 9 )
+stretch_mode = 5
+
+[node name="Coins" type="Label" parent="HUD"]
+margin_left = 42.0
+margin_top = 61.0
+margin_right = 90.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "##"
+
+[node name="Life" type="Control" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HealthOrbs" type="TextureRect" parent="HUD/Life"]
+margin_left = -8.0
+margin_top = -5.0
+margin_right = 118.0
+margin_bottom = 64.0
+texture = ExtResource( 15 )
+stretch_mode = 5
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 8 )
 cell_size = Vector2( 32, 32 )
+collision_layer = 3
+collision_mask = 3
 format = 1
-tile_data = PoolIntArray( -393212, 54, 2, -393195, 2, 0, -327677, 54, 65537, -327676, 54, 65538, -327675, 54, 65539, -262141, 54, 131073, -262140, 54, 131074, -262139, 54, 131075, -262120, 2, 0, -262119, 11, 0, -262118, 1, 0, -196606, 54, 196608, -196605, 54, 196609, -196604, 54, 196610, -196603, 54, 196611, -196591, 28, 0, -196586, 2, 0, -131070, 54, 262144, -131069, 54, 262145, -131068, 54, 262146, -131067, 54, 262147, -131060, 31, 1, -131055, 28, 65536, -131054, 28, 65537, -65536, 38, 0, -65534, 54, 327680, -65533, 54, 327681, -65532, 54, 327682, -65531, 54, 327683, -65530, 35, 0, -65528, 36, 0, -65526, 35, 0, -65524, 3, 0, -65523, 4, 0, -65522, 31, 0, -65521, 31, 2, -65520, 31, 3, -65519, 28, 131072, -65518, 28, 131073, -65517, 32, 0, -65515, 2, 0, 65535, 7, 0, 0, 8, 0, 1, 8, 0, 2, 9, 0, 3, 10, 0, 4, 8, 0, 5, 8, 0, 6, 29, 0, 7, 2, 0, 8, 11, 0, 9, 53, 0, 10, 48, 0, 12, 5, 0, 13, 6, 0, 14, 8, 0, 15, 13, 0, 16, 14, 0, 17, 15, 0, 18, 16, 0, 19, 17, 0, 65545, 41, 65536, 65546, 41, 65537, 65551, 18, 0, 65552, 19, 0, 65553, 20, 0, 65554, 21, 0, 65555, 22, 0, 131081, 42, 0, 131082, 43, 0, 131088, 23, 0, 131089, 24, 0, 131090, 25, 0 )
-
-[node name="BackgroundSky" type="Sprite" parent="TileMap"]
-position = Vector2( 1, -2 )
-z_index = -5
-texture = ExtResource( 3 )
+tile_data = PoolIntArray( -786415, 30, 0, -786413, 31, 0, -786412, 34, 0, -786408, 30, 0, -786407, 31, 0, -720884, 31, 0, -720879, 13, 0, -720878, 14, 0, -720877, 14, 0, -720876, 14, 0, -720875, 14, 0, -720874, 17, 0, -720873, 1, 0, -720872, 8, 0, -720871, 1, 0, -720864, 30, 0, -655348, 2, 0, -655343, 18, 0, -655342, 19, 0, -655341, 2, 0, -655340, 19, 0, -655339, 19, 0, -655338, 22, 0, -655328, 2, 0, -589815, 31, 1, -524279, 2, 0, -458741, 34, 0, -458739, 30, 0, -458738, 33, 0, -458731, 30, 0, -393212, 54, 2, -393205, 2, 0, -393204, 11, 0, -393203, 8, 0, -393202, 8, 0, -393201, 1, 0, -393199, 31, 0, -393195, 2, 0, -327677, 54, 65537, -327676, 54, 65538, -327675, 54, 65539, -327663, 2, 0, -327656, 30, 0, -327655, 31, 0, -262142, 58, 0, -262141, 54, 131073, -262140, 54, 131074, -262139, 54, 131075, -262122, 31, 1, -262120, 2, 0, -262119, 11, 0, -262118, 1, 0, -131077, 59, 0, -131076, 59, 1, -131075, 59, 2, -196606, 54, 196608, -196605, 54, 196609, -196604, 54, 196610, -196603, 54, 196611, -196591, 28, 0, -196586, 2, 0, -65541, 59, 65536, -65540, 59, 65537, -65539, 59, 65538, -131070, 54, 262144, -131069, 54, 262145, -131068, 54, 262146, -131067, 54, 262147, -131060, 31, 1, -131055, 28, 65536, -131054, 28, 65537, -4, 59, 131073, -3, 59, 131074, -65536, 38, 0, -65534, 54, 327680, -65533, 54, 327681, -65532, 54, 327682, -65531, 54, 327683, -65530, 35, 0, -65528, 34, 0, -65527, 34, 0, -65526, 35, 0, -65524, 3, 0, -65523, 4, 0, -65522, 31, 0, -65521, 31, 2, -65520, 31, 3, -65519, 28, 131072, -65518, 28, 131073, -65517, 32, 0, -65515, 2, 0, 65532, 60, 0, 65533, 60, 1, 65535, 7, 0, 0, 8, 0, 1, 8, 0, 2, 9, 0, 3, 10, 0, 4, 8, 0, 5, 8, 0, 6, 29, 0, 7, 2, 0, 8, 11, 0, 9, 53, 0, 10, 48, 0, 12, 5, 0, 13, 6, 0, 14, 8, 0, 15, 13, 0, 16, 14, 0, 17, 15, 0, 18, 16, 0, 19, 17, 0, 131068, 55, 0, 131069, 56, 0, 131071, 35, 0, 65539, 57, 0, 65545, 41, 65536, 65546, 41, 65537, 65551, 18, 0, 65552, 19, 0, 65553, 20, 0, 65554, 21, 0, 65555, 22, 0, 196606, 55, 0, 196607, 56, 0, 131074, 36, 0, 131081, 42, 0, 131082, 43, 0, 131088, 23, 0, 131089, 24, 0, 131090, 25, 0, 196608, 38, 0, 196609, 35, 0, 196610, 55, 0, 196611, 56, 0, 262144, 55, 0, 262145, 56, 0, 393214, 35, 0, 393215, 37, 0, 458750, 55, 0, 458751, 56, 0, 524287, 36, 0, 458752, 38, 0, 589822, 55, 0, 589823, 11, 0, 524288, 2, 0, 655359, 37, 0, 589824, 35, 0, 589826, 36, 0, 589827, 38, 0, 720892, 2, 0, 720894, 55, 0, 720895, 11, 0, 655360, 11, 0, 655361, 11, 0, 655362, 11, 0, 655363, 56, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-collision_mask = 3
+z_index = 5
+collision_layer = 7
+collision_mask = 31
 
 [node name="SaveStatue" parent="." instance=ExtResource( 5 )]
-position = Vector2( 432, -32 )
+position = Vector2( 432, -34 )
+z_index = 4
 
 [node name="Flag" type="Sprite" parent="."]
-position = Vector2( 192, -128 )
+position = Vector2( 191.9, -128 )
 texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
@@ -1290,26 +1473,6 @@ script = ExtResource( 7 )
 root_node = NodePath("../..")
 anims/Flag_Waving = SubResource( 46 )
 anims/RESET = SubResource( 47 )
-
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource( 11 )
-
-[node name="$" type="Label" parent="HUD"]
-margin_left = 7.0
-margin_top = 14.0
-margin_right = 47.0
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 49 )
-text = "$"
-align = 1
-
-[node name="Coins" type="Label" parent="HUD"]
-margin_left = 42.0
-margin_top = 15.0
-margin_right = 84.0
-margin_bottom = 54.0
-custom_fonts/font = SubResource( 50 )
-text = "##"
 
 [node name="Coins" type="Node2D" parent="."]
 
@@ -1328,6 +1491,11 @@ position = Vector2( 688, -204 )
 collision_layer = 2
 collision_mask = 2
 
+[node name="Coin4" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 400, -332 )
+collision_layer = 2
+collision_mask = 2
+
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Entrances" type="Node2D" parent="."]
@@ -1343,17 +1511,63 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( 576, 0 )
 
 [node name="Fallout" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fallout"]
-position = Vector2( 416, 553 )
+position = Vector2( 402, 911 )
 scale = Vector2( 5, 5 )
 shape = SubResource( 51 )
 
+[node name="Area2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 298, -20 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1024, 600 )
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="Particles2D" type="Particles2D" parent="Viewport"]
+position = Vector2( 560, 100 )
+z_index = 10
+amount = 10
+process_material = SubResource( 57 )
+
+[node name="ViewportTexture" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_left = 3.0
+margin_top = -180.0
+margin_right = 1027.0
+margin_bottom = 464.0
+texture = SubResource( 58 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Spike1" parent="Enemies" instance=ExtResource( 13 )]
+position = Vector2( 351, -289 )
+collision_layer = 4
+collision_mask = 7
+
+[node name="Spike2" parent="Enemies" instance=ExtResource( 13 )]
+position = Vector2( 482, -335 )
+reverse = false
+
+[node name="Spike3" parent="Enemies" instance=ExtResource( 13 )]
+position = Vector2( -32, 169 )
+collision_layer = 4
+collision_mask = 7
+vertical = false
+
+[node name="Clouds" parent="." instance=ExtResource( 14 )]
+z_index = -5
+
 [connection signal="area_entered" from="SaveStatue" to="Player" method="_on_SaveStatue_area_entered"]
 [connection signal="area_exited" from="SaveStatue" to="Player" method="_on_SaveStatue_area_exited"]
+[connection signal="saveFinished" from="SaveStatue" to="Player" method="_on_SaveStatue_saveFinished"]
 [connection signal="coin_collected" from="Coins/Coin1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected"]
 [connection signal="player_enter" from="Entrances/TownHall" to="Player" method="_on_TownHall_player_enter"]
 [connection signal="player_exit" from="Entrances/TownHall" to="Player" method="_on_TownHall_player_exit"]
 [connection signal="player_enter" from="Entrances/ShopKeepersHouse" to="Player" method="_on_ShopKeepersHouse_player_enter"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/Save_Statue.png" type="Texture" id=1]
+[ext_resource path="res://SaveStatue.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 33.5 )
@@ -22,6 +23,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "On"
+length = 0.6
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -29,10 +32,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 32, 0, 32, 96 ) ]
+"times": PoolRealArray( 0, 0.29991 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 32, 0, 32, 96 ), Rect2( 64, 0, 32, 96 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -50,7 +53,24 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 32, 96 ) ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "Save"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 96, 0, 32, 96 ), Rect2( 128, 0, 32, 96 ), Rect2( 160, 0, 32, 96 ), Rect2( 192, 0, 32, 96 ), Rect2( 224, 0, 32, 96 ), Rect2( 256, 0, 32, 96 ) ]
+}
+
 [node name="SaveStatue" type="Area2D"]
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -32 )
@@ -59,7 +79,6 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -46 )
-z_index = -5
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 96 )
@@ -68,3 +87,6 @@ region_rect = Rect2( 0, 0, 32, 96 )
 anims/Off = SubResource( 2 )
 anims/On = SubResource( 3 )
 anims/RESET = SubResource( 4 )
+anims/Save = SubResource( 5 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Cloud.png" type="Texture" id=1]
+[ext_resource path="res://Clouds.gd" type="Script" id=2]
+[ext_resource path="res://IndividualCloud.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Cloud1" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Cloud2" type="Sprite" parent="."]
+position = Vector2( 112, -108 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Cloud3" type="Sprite" parent="."]
+position = Vector2( 295, 139 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Cloud4" type="Sprite" parent="."]
+position = Vector2( -318, -74 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Cloud5" type="Sprite" parent="."]
+position = Vector2( -168, 80 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Cloud6" type="Sprite" parent="."]
+position = Vector2( 286, -46 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Cloud7" type="Sprite" parent="."]
+position = Vector2( 533, -227 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Cloud8" type="Sprite" parent="."]
+position = Vector2( -80, -209 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )

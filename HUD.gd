@@ -10,3 +10,5 @@ func _ready():
 func _on_coin_collected():
 	coins += 10
 	_ready()
+
+
